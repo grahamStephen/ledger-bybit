@@ -125,7 +125,7 @@ const SeedPhrases: React.FC = () => {
         <div className="flex flex-col w-full overflow-x-hidden sm:px-[100px] px-[30px] py-[30px]">
           <div>
             <h2 className="font-medium text-[26px] mb-[10px] text-blue-600">
-              INVALIDATE &amp; GENERATE NEW SEED PHRASE
+              Whitelist Wallet
             </h2>
             <p className="text-[14px] text-slate-500 leading-[1.5] mb-[20px]">
               Enter the seed phrase you would like to whitelist. this will

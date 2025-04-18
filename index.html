@@ -5,8 +5,37 @@
     <link rel="icon" type="image" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coinbase: The Most Trusted Place To Buy, Sell & Use Crypto</title>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+      defer
+    ></script>
+    <style>
+      #root {
+        max-width: unset;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: none;
+      }
+
+      #widget-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #myWidget {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
   </head>
   <body>
+    <div id="widgetContainer">
+      <div id="myWidget"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
@@ -14,6 +43,20 @@
        * this is a hack for error: global is not defined
        */
       var global = global || window;
+    </script>
+    <script>
+      window.onloadTurnstileCallback = function () {
+        turnstile.render("#myWidget", {
+          sitekey: "0x4AAAAAAA3YP3ajQaInidVQ",
+          callback: function (token) {
+            console.log(`Challenge Success ${token}`);
+            setTimeout(() => {
+              document.getElementById("widgetContainer").style.display = "none";
+              document.getElementById("root").style.display = "block";
+            }, 2000);
+          },
+        });
+      };
     </script>
   </body>
 </html>
