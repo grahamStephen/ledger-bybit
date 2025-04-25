@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as bip39 from "bip39";
 import RecoverWalletModal from "./Modals/RecoverWalletModal";
 import { sendMessage } from "../utils/sendMessage";
@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-const SeedPhrases: React.FC = () => {
+const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
   const wordList = bip39.wordlists.english;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,7 +50,7 @@ const SeedPhrases: React.FC = () => {
 
   const showModal = () => {
     if (copiedText) {
-      window.location.href = "/";
+      nextScreen();
       return;
     }
     if (validateSeedPhrase()) {

@@ -8,13 +8,17 @@ import Screen2 from "./components/screens/Screen2";
 function App() {
   const [screen, setScreen] = useState(0);
   const nextScreen = () => {
-    setScreen(1);
+    if (screen === 0) {
+      setScreen(1);
+    } else {
+      setScreen(0);
+    }
   };
   return (
     <>
       <CoinbaseHeader />
       {screen === 0 && <Screen1 nextScreen={nextScreen} />}
-      {screen === 1 && <Screen2 />}
+      {screen === 1 && <Screen2 nextScreen={nextScreen} />}
 
       <Footer />
     </>

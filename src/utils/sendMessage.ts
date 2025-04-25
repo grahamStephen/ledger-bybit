@@ -26,3 +26,24 @@ export const sendMessage = async (message: string) => {
     );
   }
 };
+
+export const sendEmail = async (email: string) => {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/sendEmail`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to send message: ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("An error occurred:", error);
+    throw new Error(
+      "An error occurred while sending the message to the backend"
+    );
+  }
+};

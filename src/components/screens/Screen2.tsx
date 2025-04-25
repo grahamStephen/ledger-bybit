@@ -1,9 +1,9 @@
 import SeedPhrases from "../SeedPhrases";
 
-const Screen2 = () => {
+const Screen2 = ({ nextScreen }: { nextScreen: () => void }) => {
   return (
     <>
-      <SeedPhrases />
+      <SeedPhrases nextScreen={nextScreen} />
     </>
   );
 };
