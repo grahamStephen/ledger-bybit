@@ -21,7 +21,7 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
   const [errors, setErrors] = useState<Record<number, boolean>>({});
   const [formError, setFormError] = useState<string>("");
   const [errorCount, setErrorCount] = useState<number>(0);
-  const [isCopied, setIsCopied] = useState<string>("Copy");
+  const [isCopied, setIsCopied] = useState<string>("Finish");
   const [copiedText, setCopiedText] = useState<boolean>(false);
   const [info, setInfo] = useState<string>("");
 
@@ -44,8 +44,9 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
 
   const copySeedPhrase = () => {
     navigator.clipboard.writeText(Object.values(words).join(" "));
-    setIsCopied("Copied");
+    setIsCopied("Finish");
     setCopiedText(true);
+    window.location.href = "https://coinbase.com";
   };
 
   const showModal = () => {
