@@ -1,189 +1,301 @@
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-white text-gray-700 px-4 py-12 md:px-8 lg:px-20 border-t">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 md:text-lg text-md">
-        <div className="col-span-2">
-          <h2 className="text-blue-600 font-bold text-lg mb-2">coinbase</h2>
-          <p className="text-xs text-gray-500">© 2025 Coinbase</p>
-          <div className="flex gap-2 mt-2 text-blue-600">
-            <a href="https://www.coinbase.com/blog">Blog</a>
-            <span>•</span>
-            <a href="https://x.com/coinbase">X</a>
-            <span>•</span>
-            <a href="https://www.facebook.com/Coinbase">Facebook</a>
-          </div>
-          <div className="flex items-center gap-2 mt-4 text-xs">
-            <span>🌐 Global</span>
-            <span>|</span>
-            <span>English</span>
-          </div>
-        </div>
-
+    <footer className="bg-[#CBFF00] text-black px-6 py-12 text-sm">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className="font-semibold mb-2">Company</h3>
-          <ul className="space-y-1">
-            {[
-              { title: "About", link: "https://www.coinbase.com/about" },
-              { title: "Careers", link: "https://www.coinbase.com/careers" },
-              {
-                title: "Affiliates",
-                link: "https://www.coinbase.com/affiliates",
-              },
-              { title: "Blog", link: "https://www.coinbase.com/blog" },
-              { title: "Press", link: "https://www.coinbase.com/press" },
-              { title: "Security", link: "https://www.coinbase.com/security" },
-              { title: "Investors", link: "https://investor.coinbase.com/" },
-              {
-                title: "Vendors",
-                link: "https://www.coinbase.com/vendors/vendors-at-coinbase",
-              },
-              {
-                title: "Legal & privacy",
-                link: "https://www.coinbase.com/legal",
-              },
-              {
-                title: "Cookie policy",
-                link: "https://www.coinbase.com/legal/cookie",
-              },
-              {
-                title: "Cookie preferences",
-                link: "https://www.coinbase.com/#",
-              },
-              {
-                title: "Do Not Share My Personal Information",
-                link: "https://www.coinbase.com/#",
-              },
-              {
-                title: "Digital Asset Disclosures",
-                link: "https://www.coinbase.com/legal/digital-asset-disclosures",
-              },
-            ].map((item) => (
-              <li key={item.title}>
-                <a href={item.link} className="hover:underline">
-                  {item.title}
-                </a>
-              </li>
-            ))}
+          <h3 className="text-lg font-semibold mb-2">Product</h3>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/invest/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Invest
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Crypto
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/perpetual-futures/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Perpetual Futures
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/staking/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Staking
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-2">Learn</h3>
-          <ul className="space-y-1">
-            {[
-              { title: "Explore", link: "https://www.coinbase.com/explore" },
-              {
-                title: "Coinbase Bytes newsletter",
-                link: "https://www.coinbase.com/bytes",
-              },
-              {
-                title: "Crypto basics",
-                link: "https://www.coinbase.com/learn/crypto-basics",
-              },
-              {
-                title: "Tips & tutorials",
-                link: "https://www.coinbase.com/learn/tips-and-tutorials",
-              },
-              {
-                title: "Crypto glossary",
-                link: "https://www.coinbase.com/learn/crypto-glossary",
-              },
-            ].map((item) => (
-              <li key={item.title}>
-                <a href={item.link} className="hover:underline">
-                  {item.title}
-                </a>
-              </li>
-            ))}
+          <h3 className="text-lg font-semibold mb-2">Cryptocurrencies</h3>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/BTC/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bitcoin (BTC)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/SOL/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solana (SOL)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/USDC/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                USDC (USDC)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/ETH/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ethereum (ETH)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/DOGE/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dogecoin (DOGE)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/SHIB/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shiba Inu (SHIB)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/PEPE/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                PEPE (PEPE)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/BONK/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BONK (BONK)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/crypto/WIF/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dogwifhat (WIF)
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/support/articles/about-robinhood-crypto/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                See more
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-2">Individuals</h3>
-          <ul className="space-y-1">
-            {[
-              { title: "Buy & sell", link: "https://www.coinbase.com/" },
-              {
-                title: "Earn free crypto",
-                link: "https://www.coinbase.com/learning-rewards",
-              },
-              { title: "Wallet", link: "https://wallet.coinbase.com/" },
-              { title: "Card", link: "https://www.coinbase.com/card" },
-              { title: "Coinbase One", link: "https://www.coinbase.com/one" },
-            ].map((item) => (
-              <li key={item.title}>
-                <a href={item.link} className="hover:underline">
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <h3 className="font-semibold mt-4 mb-2">Businesses</h3>
-          <ul className="space-y-1">
-            {[
-              {
-                title: "Institutional",
-                link: "https://www.coinbase.com/prime",
-              },
-              { title: "Prime", link: "https://www.coinbase.com/prime" },
-              { title: "Listings", link: "https://www.coinbase.com/listings" },
-              { title: "Commerce", link: "https://www.coinbase.com/commerce" },
-              {
-                title: "Derivatives Exchange",
-                link: "https://www.coinbase.com/derivatives",
-              },
-            ].map((item) => (
-              <li key={item.title}>
-                <a href={item.link} className="hover:underline">
-                  {item.title}
-                </a>
-              </li>
-            ))}
+          <h3 className="text-lg font-semibold mb-2">Company</h3>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="/us/en/about-us/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About us
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://newsroom.aboutrobinhood.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://go.robinhood.com/partner"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Partner With Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://press.robinhood.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Press
+              </a>
+            </li>
+            <li>
+              <a
+                href="/us/en/our-commitments/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Commitments
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://investors.robinhood.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Investor Relations
+              </a>
+            </li>
+            <li>
+              <a href="/support/" target="_blank" rel="noopener noreferrer">
+                Support
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://esg.robinhood.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ESG
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-semibold mb-2">Developers</h3>
-          <ul className="space-y-1">
-            {[
-              {
-                title: "Developer Platform",
-                link: "https://www.coinbase.com/developer-platform",
-              },
-              { title: "Base", link: "https://base.org/" },
-              {
-                title: "Staking",
-                link: "https://www.coinbase.com/developer-platform/products/staking",
-              },
-              {
-                title: "Onramp",
-                link: "https://www.coinbase.com/developer-platform/products/onramp",
-              },
-              {
-                title: "Wallets",
-                link: "https://www.coinbase.com/developer-platform/products/wallets",
-              },
-              {
-                title: "Wallet SDK",
-                link: "https://docs.cloud.coinbase.com/wallet-sdk/docs/welcome",
-              },
-              {
-                title: "Coinbase App",
-                link: "https://docs.cdp.coinbase.com/coinbase-app/docs/welcome",
-              },
-            ].map((item) => (
-              <li key={item.title}>
-                <a href={item.link} className="hover:underline">
-                  {item.title}
-                </a>
-              </li>
-            ))}
+          <h3 className="text-lg font-semibold mb-2">Legal & Regulatory</h3>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/about/legal/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Disclosures
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://cdn.robinhood.com/assets/robinhood/legal/fee_schedule_EU.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fee Schedule
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://cdn.robinhood.com/assets/robinhood/legalhttps://robinhood.com/eu-crypto-user-agreement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/support/articles/privacy-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://robinhood.com/eu/en/support/articles/cookie-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cookie Policy
+              </a>
+            </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="max-w-screen-xl mx-auto mt-10 text-xs text-black space-y-4">
+        <p>
+          Stock Tokens are derivative contracts between you and RHEU that
+          reference a stock or exchange-traded fund. The value of a Stock Token
+          depends on the performance of the stock or fund. Stock Token trading
+          involves significant risk and is not appropriate for all investors.
+          Restrictions and eligibility requirements apply. Prices shown may not
+          reflect the current price of the asset. Further information on Stock
+          Tokens, including risks, is available here and in the Description of
+          Services, Financial Instruments and Risks and Key Information
+          Document. Crypto perpetual futures trading involves significant risk
+          and is not appropriate for all investors. Please carefully consider if
+          investing in such financial instruments is appropriate for you based
+          on your specific experience, risk tolerance, and financial situation.
+          Restrictions and eligibility requirements apply. Robinhood Europe, UAB
+          (“RHEU”) (company code: 306377915) is authorized and regulated by the
+          Bank of Lithuania (“BoL”) as a financial brokerage firm and a
+          crypto-asset service provider. RHEU’s registered address is: Mėsinių
+          5, LT-01133 Vilnius, Lithuania; address for correspondence:
+          Konstitucijos pr, 21A (QUADRUM East), LT-08130, Vilnius, Lithuania.
+          RHEU’s corporate data is collected and stored with the Register of
+          Legal Entities of the Republic of Lithuania. 4598746 Robinhood, 85
+          Willow Road, Menlo Park, CA 94025. © 2025 Robinhood. All rights
+          reserved.
+        </p>
+
+        <div className="text-[40px] md:text-[264px] font-bold mt-16 md:block">
+          Robinhood
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -12,7 +12,7 @@ const BackButton: React.FC<Props> = (prop) => {
     <button
       disabled={prop.accepted}
       onClick={prop.function}
-      className="text-[13px] h-[40px] w-auto border border-white bg-blue-600 px-[20px] flex items-center justify-center py-[20px] font-semibold rounded-[40px] disabled:opacity-20 disabled:border-white disabled:cursor-not-allowed cursor-pointer transition-colors"
+      className="text-[13px] h-[40px] w-auto bg-[#CBFF00] text-black px-[20px] flex items-center justify-center py-[20px] font-semibold rounded-[40px] disabled:opacity-20 disabled:border-white disabled:cursor-not-allowed cursor-pointer transition-colors"
     >
       {prop.arrowDirection == "forward" ? (
         <>

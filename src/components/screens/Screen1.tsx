@@ -1,13 +1,15 @@
-import AlmostFooter from "../AlmostFooter";
-import CoinSection from "../CoinSection";
 import HeroSection from "../HeroSection";
+import InvestSection from "../InvestSection";
+import PerpetualFuturesSection from "../PerpetualFeaturesSection";
+import SecuritySection from "../SecuritySection";
 
 const Screen1 = ({ nextScreen }: { nextScreen: () => void }) => {
   return (
     <>
       <HeroSection nextScreen={nextScreen} />
-      <CoinSection />
-      <AlmostFooter />
+      <InvestSection />
+      <PerpetualFuturesSection />
+      <SecuritySection />
     </>
   );
 };

