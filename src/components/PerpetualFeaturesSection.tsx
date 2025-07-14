@@ -41,9 +41,11 @@ export default function PerpetualFuturesSection() {
             positions and more— in a few taps.
           </p>
 
-          <Button className="bg-[#CBFF00] text-black rounded-full px-6 py-6 text-lg hover:opacity-80 cursor-pointer">
-            Learn more
-          </Button>
+          <a href="https://robinhood.com/eu/en/perpetual-futures?lang=nl">
+            <Button className="bg-[#CBFF00] text-black rounded-full px-6 py-6 text-lg hover:opacity-80 cursor-pointer">
+              Learn more
+            </Button>
+          </a>
         </div>
 
         {/* Fine print */}

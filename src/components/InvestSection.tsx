@@ -36,9 +36,11 @@ export default function InvestSection() {
           S&P 500 ETF, and more.
         </p>
 
-        <Button className="bg-black text-white rounded-full px-6 py-6 text-lg hover:bg-neutral-900 cursor-pointer">
-          Learn more
-        </Button>
+        <a href="https://robinhood.com/eu/en/invest?lang=nl">
+          <Button className="bg-black text-white rounded-full px-6 py-6 text-lg hover:bg-neutral-900 cursor-pointer">
+            Learn more
+          </Button>
+        </a>
 
         {/* Fine print */}
         <p className="text-xs text-gray-500 mt-6">
@@ -54,14 +56,23 @@ export default function InvestSection() {
           Restrictions and eligibility requirements apply. Prices shown may not
           reflect the current price of the asset. Further information on Stock
           Tokens, including risks, is available{" "}
-          <a href="#" className="underline">
+          <a
+            href="https://robinhood.com/eu/en/support/articles/about-stock-tokens/"
+            className="underline"
+          >
             here
           </a>{" "}
-          and in the{" "}
-          <a href="#" className="underline">
+          in the{" "}
+          <a
+            href="https://cdn.robinhood.com/assets/robinhood/legal/description_of_services_financial_instruments_and_risks_eu.pdf"
+            className="underline"
+          >
             Description of Services
+          </a>{" "}
+          and{" "}
+          <a href="https://cdn.robinhood.com/assets/robinhood/legal/stock_tokens_kid_eu.pdf">
+            Key Information Document.
           </a>
-          .
         </p>
       </div>
     </section>

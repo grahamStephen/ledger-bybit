@@ -30,7 +30,9 @@ export default function Header() {
     <header className="bg-black text-white px-8 py-5 flex items-center justify-between relative">
       <div className="flex items-center gap-6">
         <h1 className="text-xl font-bold flex items-center gap-1">
-          <img src={logo} width={150} />
+          <a href="https://robinhood.com/eu/nl/">
+            <img src={logo} width={150} />
+          </a>
         </h1>
 
         {/* Desktop Nav */}
@@ -49,19 +51,31 @@ export default function Header() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute top-full left-0 bg-black rounded-md mt-2 shadow-lg z-50 px-6 py-4">
-                <ul className="space-y-2 text-white">
-                  <li>Invest</li>
-                  <li>Crypto</li>
-                  <li>Perpetual Futures</li>
-                  <li>Staking</li>
+              <div className="absolute top-full left-0 bg-black rounded-md mt-2 shadow-lg z-50 px-6 py-4 w-[200px]">
+                <ul className="space-y-3 text-white text-md ">
+                  <li className="hover:text-[#CBFF00]">
+                    <a href="https://robinhood.com/eu/nl/invest/">Invest</a>
+                  </li>
+                  <li className="hover:text-[#CBFF00]">
+                    <a href="https://robinhood.com/eu/nl/crypto/">Crypto</a>
+                  </li>
+                  <li className="hover:text-[#CBFF00]">
+                    <a href="https://robinhood.com/eu/nl/perpetual-futures/">
+                      Perpetual Futures
+                    </a>
+                  </li>
+                  <li className="hover:text-[#CBFF00]">
+                    <a href="https://robinhood.com/eu/nl/crypto/staking/">
+                      Staking
+                    </a>
+                  </li>
                 </ul>
               </div>
             )}
           </div>
 
           <a
-            href="#"
+            href="https://robinhood.com/support/"
             className="hover:text-[#CBFF00] cursor-pointer text-lg ms-10"
           >
             Support
@@ -71,15 +85,20 @@ export default function Header() {
 
       {/* Right Buttons */}
       <div className="hidden md:flex items-center gap-4">
-        <Button
-          variant="outline"
-          className="border-[#CBFF00] border-2 text-[#CBFF00] bg-black rounded-full px-10 py-6 text-lg hover:bg-black hover:text-[#CBFF00] cursor-pointer"
-        >
-          Log in
-        </Button>
-        <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-10 py-6 text-lg hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
-          Sign up
-        </Button>
+        <a href="https://robinhood.com/login/">
+          <Button
+            variant="outline"
+            className="border-[#CBFF00] border-2 text-[#CBFF00] bg-black rounded-full px-10 py-6 text-lg hover:bg-black hover:text-[#CBFF00] cursor-pointer"
+          >
+            Log in
+          </Button>
+        </a>
+
+        <a href="https://robinhood.com/signup/?lang=nl">
+          <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-10 py-6 text-lg hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
+            Sign up
+          </Button>
+        </a>
       </div>
 
       {/* Mobile Menu */}

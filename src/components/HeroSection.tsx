@@ -97,6 +97,7 @@ export default function Hero({ nextScreen }: { nextScreen: () => void }) {
         autoPlay
         muted
         loop
+        preload="auto"
         playsInline
         className="absolute inset-0 object-cover w-full h-full hidden md:block"
       >
@@ -109,6 +110,7 @@ export default function Hero({ nextScreen }: { nextScreen: () => void }) {
         autoPlay
         muted
         loop
+        preload="auto"
         playsInline
         className="absolute inset-0 object-cover w-full h-full block md:hidden"
       >

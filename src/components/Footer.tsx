@@ -145,7 +145,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>
               <a
-                href="/us/en/about-us/"
+                href="https://robinhood.com/us/en/about-us/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -181,7 +181,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="/us/en/our-commitments/"
+                href="https://robinhood.com/us/en/our-commitments/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -198,7 +198,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/support/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://robinhood.com/support/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Support
               </a>
             </li>
@@ -292,7 +296,7 @@ export default function Footer() {
           reserved.
         </p>
 
-        <div className="text-[40px] md:text-[264px] font-bold mt-16 md:block">
+        <div className="text-[10vw] leading-none font-bold text-center w-full mt-16">
           Robinhood
         </div>
       </div>

@@ -10,6 +10,7 @@ export default function SecuritySection() {
         muted
         loop
         playsInline
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src={video} type="video/mp4" />
@@ -29,9 +30,11 @@ export default function SecuritySection() {
           26 million users.
         </h2>
 
-        <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-10 py-6 text-lg hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
-          Get Started
-        </Button>
+        <a href="https://robinhood.com/signup/?lang=nl">
+          <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-10 py-6 text-lg hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
+            Get Started
+          </Button>
+        </a>
       </div>
     </section>
   );
