@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import video from "../assets/Texture_1_Mobile.webm";
+import video from "../assets/Texture_1_Mobile.mp4";
 
 export default function SecuritySection() {
   return (

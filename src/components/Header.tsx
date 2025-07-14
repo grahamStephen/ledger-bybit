@@ -104,9 +104,12 @@ export default function Header() {
       {/* Mobile Menu */}
       <div className="md:hidden">
         <Sheet>
-          <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-5 py-3 text-md hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
-            Sign up
-          </Button>
+          <a href="https://robinhood.com/signup/?lang=nl">
+            <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-5 py-3 text-md hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
+              Sign up
+            </Button>
+          </a>
+
           <SheetTrigger asChild>
             <Button variant="ghost">
               <Menu className="text-white w-50" size={150} />
