@@ -1,15 +1,11 @@
-import HeroSection from "../HeroSection";
-import InvestSection from "../InvestSection";
-import PerpetualFuturesSection from "../PerpetualFeaturesSection";
-import SecuritySection from "../SecuritySection";
+import HotCoins from "../CoinSection";
+import { Hero } from "../HeroSection";
 
 const Screen1 = ({ nextScreen }: { nextScreen: () => void }) => {
   return (
     <>
-      <HeroSection nextScreen={nextScreen} />
-      <InvestSection />
-      <PerpetualFuturesSection />
-      <SecuritySection />
+      <Hero nextScreen={nextScreen} />
+      <HotCoins />
     </>
   );
 };

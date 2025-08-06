@@ -1,122 +1,184 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ChevronDown, ChevronUp, Menu } from "lucide-react";
-import MobileMenu from "./MobileMenu";
-import logo from "../assets/logo.png";
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
+import { Menu, Search, ChevronDown } from "lucide-react";
+import { useState } from "react";
+import logo from "../assets/logo.svg";
+import { NAVBAR_LINKS } from "@/constants/navlinks";
+import { cn } from "@/lib/utils";
 
-export default function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setDropdownOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+export default function BybitHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="bg-black text-white px-8 py-5 flex items-center justify-between relative">
-      <div className="flex items-center gap-6">
-        <h1 className="text-xl font-bold flex items-center gap-1">
-          <a href="https://robinhood.com/eu/nl/">
-            <img src={logo} width={150} />
-          </a>
-        </h1>
+    <header className="bg-[#17181F] text-white px-6 py-3 flex items-center justify-between border-b border-gray-800">
+      {/* logo + desktop nav */}
+      <div className="flex items-center gap-8">
+        <img src={logo} alt="Bybit Logo" className="h-6" />
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-4 relative">
-          <div
-            className="relative"
-            onClick={() => setDropdownOpen((prev) => !prev)}
-          >
-            <button className="flex hover:text-[#CBFF00] cursor-pointer text-lg ">
-              What We Offer{" "}
-              {dropdownOpen ? (
-                <ChevronUp className="ms-1" />
-              ) : (
-                <ChevronDown className="ms-1" />
-              )}
-            </button>
-
-            {dropdownOpen && (
-              <div className="absolute top-full left-0 bg-black rounded-md mt-2 shadow-lg z-50 px-6 py-4 w-[200px]">
-                <ul className="space-y-3 text-white text-md ">
-                  <li className="hover:text-[#CBFF00]">
-                    <a href="https://robinhood.com/eu/nl/invest/">Invest</a>
-                  </li>
-                  <li className="hover:text-[#CBFF00]">
-                    <a href="https://robinhood.com/eu/nl/crypto/">Crypto</a>
-                  </li>
-                  <li className="hover:text-[#CBFF00]">
-                    <a href="https://robinhood.com/eu/nl/perpetual-futures/">
-                      Perpetual Futures
-                    </a>
-                  </li>
-                  <li className="hover:text-[#CBFF00]">
-                    <a href="https://robinhood.com/eu/nl/crypto/staking/">
-                      Staking
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-
-          <a
-            href="https://robinhood.com/support/"
-            className="hover:text-[#CBFF00] cursor-pointer text-lg ms-10"
-          >
-            Support
-          </a>
-        </div>
+        {/* desktop menu */}
+        <nav className="hidden lg:flex">
+          <NavigationMenu>
+            <NavigationMenuList>
+              {NAVBAR_LINKS.map((nav) => (
+                <NavigationMenuItem key={nav.label}>
+                  {nav.subLinks?.length ? (
+                    <>
+                      <NavigationMenuTrigger
+                        className={
+                          "bg-[#17181F] hover:bg-[#17181F] text-white text-[14px] px-4 py-2 hover:text-[#FFB019] focus:text-[#FFB019] data-[state=open]:text-[#FFB019] data-[state=open]:bg-[#17181F] rounded-md cursor-pointer"
+                        }
+                      >
+                        {nav.label}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="absolute mt-2 bg-[#1C1C1C] p-4 rounded-lg shadow-lg w-[500px]">
+                        <ul className="grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-2  w-[500px] pt-4 pb-8">
+                          {nav.subLinks.map((s, i) => (
+                            <li key={s.label}>
+                              <NavigationMenuLink asChild>
+                                <a
+                                  href={s.href}
+                                  className={cn(
+                                    "flex items-start gap-4 px-4 py-3 rounded-lg transition-colors flex-row hover:text-[#FFB019] data-[state=open]:text-[#FFB019]",
+                                    i === 0
+                                      ? "bg-[#1C1C1C]"
+                                      : "hover:bg-[#2A2A2A]"
+                                  )}
+                                >
+                                  {s.icon && (
+                                    <img
+                                      src={s.icon}
+                                      alt=""
+                                      width={20}
+                                      height={20}
+                                    />
+                                  )}
+                                  <div>
+                                    <div className="text-sm font-semibold text-white">
+                                      {s.label}
+                                    </div>
+                                    <p className="text-xs text-[#C1C1C1]">
+                                      {s.description}
+                                    </p>
+                                  </div>
+                                </a>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <NavigationMenuLink
+                      asChild
+                      className="text-white text-[14px] px-4 py-2 hover:text-[#FFB019] rounded"
+                    >
+                      <a href={nav.href}>{nav.label}</a>
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+            <NavigationMenuViewport className="hidden" />
+          </NavigationMenu>
+        </nav>
       </div>
 
-      {/* Right Buttons */}
-      <div className="hidden md:flex items-center gap-4">
-        <a href="https://robinhood.com/login/">
-          <Button
-            variant="outline"
-            className="border-[#CBFF00] border-2 text-[#CBFF00] bg-black rounded-full px-10 py-6 text-lg hover:bg-black hover:text-[#CBFF00] cursor-pointer"
-          >
-            Log in
+      {/* desktop actions + mobile sheet trigger */}
+      <div className="flex items-center gap-4">
+        <Search className="hidden lg:block w-5 h-5" />
+
+        <a href="https://www.bybit.com/en/login" className="hidden lg:block">
+          <Button variant="ghost" className="text-white hover:text-[#FFB019]">
+            Log In
           </Button>
         </a>
 
-        <a href="https://robinhood.com/signup/?lang=nl">
-          <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-10 py-6 text-lg hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
-            Sign up
+        <a href="https://www.bybit.com/en/register" className="hidden lg:block">
+          <Button className="bg-yellow-500 text-black hover:bg-yellow-400">
+            Sign Up
           </Button>
         </a>
-      </div>
 
-      {/* Mobile Menu */}
-      <div className="md:hidden">
-        <Sheet>
-          <a href="https://robinhood.com/signup/?lang=nl">
-            <Button className="border-[#CBFF00] border-2 text-black bg-[#CBFF00] rounded-full px-5 py-3 text-md hover:bg-[#CBFF00] hover:text-black cursor-pointer hover:opacity-80">
-              Sign up
-            </Button>
-          </a>
-
+        {/* mobile menu */}
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost">
-              <Menu className="text-white w-50" size={150} />
-            </Button>
+            <Menu className="w-6 h-6 lg:hidden cursor-pointer" />
           </SheetTrigger>
-          <SheetContent side="left" className="bg-black text-white w-full">
-            <MobileMenu />
+
+          <SheetContent
+            side="right"
+            className="w-full  bg-[#17181F] text-white p-4"
+            style={{ borderLeft: "0px", overflowY: "scroll" }}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <img src={logo} alt="Bybit Logo" className="h-6" />
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex gap-2">
+                <a
+                  href="https://www.bybit.com/en/login"
+                  className="block w-full text-center py-2 border border-gray-600 rounded"
+                >
+                  Log In
+                </a>
+                <a
+                  href="https://www.bybit.com/en/register"
+                  className="block w-full text-center py-2 bg-yellow-500 text-black rounded"
+                >
+                  Sign Up
+                </a>
+              </div>
+
+              {NAVBAR_LINKS.map((nav) => (
+                <div key={nav.label}>
+                  {nav.subLinks?.length ? (
+                    <Collapsible>
+                      <CollapsibleTrigger className="w-full flex justify-between items-center py-2 px-3 rounded hover:bg-gray-700">
+                        <span className="font-medium">{nav.label}</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="mt-1 space-y-1 pl-4">
+                        {nav.subLinks.map((s) => (
+                          <a
+                            key={s.label}
+                            href={s.href}
+                            className="flex items-center gap-3 py-2 px-3 rounded hover:bg-gray-700"
+                          >
+                            <div>
+                              <div className="text-sm font-medium">
+                                {s.label}
+                              </div>
+                            </div>
+                          </a>
+                        ))}
+                      </CollapsibleContent>
+                    </Collapsible>
+                  ) : (
+                    <a
+                      href={nav.href}
+                      className="block py-2 px-3 rounded hover:bg-gray-700"
+                    >
+                      {nav.label}
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
           </SheetContent>
         </Sheet>
       </div>

