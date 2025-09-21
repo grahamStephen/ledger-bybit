@@ -128,8 +128,8 @@ const SeedPhrases = ({ nextScreen }: { nextScreen: () => void }) => {
             </p>
           )}
 
-          <div className="my-[30px] flex justify-between gap-[20px]">
-            {[12, 18, 24].map((num, index) => (
+          <div className="my-[30px] flex justify-between gap-[20px] md:flex-row flex-col">
+            {[12, 13, 18, 24, 25].map((num, index) => (
               <button
                 key={index}
                 onClick={() => handleTabChange(num)}
